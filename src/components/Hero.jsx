@@ -1,20 +1,25 @@
 import { useEffect, useState } from "react";
 import BitcoinImg from "../assets/bitcoin.png";
-import Chevron from "../assets/icons/Chevron";
 import React, { useRef, memo } from "react";
+import Chevron from "../assets/icons/Chevron";
 
 const Hero = () => {
   const [USDprice, setUSDPrice] = useState(0);
+  const [INRPrice, setINRPrice] = useState(0);
+  const [change, setChange] = useState(0);
   const container = useRef();
   const tradingViewScriptRef = useRef(null);
 
   useEffect(() => {
     fetch(
-      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd"
+      "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd,inr&include_24hr_change=true"
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         setUSDPrice(data.bitcoin.usd);
+        setINRPrice(data.bitcoin.inr);
+        setChange(parseFloat(data.bitcoin.usd_24h_change.toFixed(2)));
       });
   }, []);
 
@@ -58,7 +63,7 @@ const Hero = () => {
     };
   }, []);
   return (
-    <div className="bg-white rounded-xl p-5 flex flex-col gap-4 h-[50vh]">
+    <div className="bg-white rounded-xl p-5 flex flex-col gap-4 h-full">
       <div>
         <div className="flex items-center gap-2">
           <img src={BitcoinImg} alt="Bitcoin" className="w-10 h-10" />
@@ -72,16 +77,27 @@ const Hero = () => {
       <div className="flex gap-3">
         <div className="flex flex-col">
           <span className="text-2xl font-semibold"> ${USDprice}</span>
-          <span> ₹39,24,444</span>
+          <span> ₹{INRPrice}</span>
         </div>
         <div>
-          <div className="bg-green-100 inline-flex text-green-600 p-0.5 pr-2 rounded-md">
-            <Chevron /> <span> 2.31% </span>
+          <div
+            className={` inline-flex ${
+              change > 0 ? "text-green-600 bg-green-100" : "text-red-600 bg-red-100"
+            } p-0.5 pr-2 rounded-md`}
+          >
+            <div className="flex items-center gap-1">
+              {change > 0 ? (
+                <Chevron color={"#14B079"} />
+              ) : (
+                <Chevron inverted={true} color={"#cd2011"} />
+              )}
+              <div> {change}% </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="bg-red-100 h-[50vh]">
+      <div className="h-full">
         <div
           className="tradingview-widget-container"
           ref={container}

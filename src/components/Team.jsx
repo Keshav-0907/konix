@@ -43,9 +43,9 @@ const Team = () => {
         {TeamData.map((item, index) => (
           <div
             key={index}
-            className="flex gap-5 p-3 bg-blue-100 rounded-md w-full"
+            className="flex md:flex-row flex-col gap-5 p-3 bg-blue-100 rounded-md w-full"
           >
-            <div className="w-2/12 flex flex-col justify-center text-center">
+            <div className="md:w-2/12 w-full flex flex-col justify-center text-center">
               <div className="flex justify-center">
                 {" "}
                 <img
@@ -57,7 +57,7 @@ const Team = () => {
               <div className="text-base font-semibold">{item.name}</div>
               <div className="text-[#3E424A] text-sm">{item.position}</div>
             </div>
-            <div className="w-10/12 flex items-center">
+            <div className="md:w-10/12 w-full flex items-center">
               <div className="text-[#3E424A] py-1 text-sm">{item.about}</div>
             </div>
           </div>

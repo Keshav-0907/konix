@@ -61,21 +61,23 @@ const Sentiment = () => {
           <InfoIcon />
         </div>
 
-        <div className="flex gap-7">
-          <div className="text-green-600 bg-green-100 font-md text-4xl inline-flex p-3 h-32 w-32 items-center justify-center rounded-full">
+        <div className="flex md:gap-7 gap-2 items-center">
+          <div className="text-green-600 bg-green-100 font-md md:text-4xl inline-flex p-3 md:h-32 md:w-32 h-20 w-20 items-center justify-center rounded-full">
             {" "}
             76%{" "}
           </div>
 
-          <div className="flex flex-col justify-around py-5">
+          <div className="flex flex-col justify-around py-5 w-full">
             {chartData.map((item, index) => (
-              <div key={index} className="flex items-center gap-3 w-[550px]">
+              <div key={index} className="flex items-center gap-3 w-full">
                 <div className="text-gray-500 text-sm">{item.label}</div>
                 <div
                   className={`h-2 rounded-[2px] ${item.color}`}
                   style={{ width: `${item.percentage}%` }}
                 ></div>
-                <div>{item.percentage} %</div>
+                <nobr>
+                  <div>{item.percentage} %</div>
+                </nobr>
               </div>
             ))}
           </div>

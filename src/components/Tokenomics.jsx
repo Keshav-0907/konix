@@ -9,7 +9,7 @@ export const data = {
   datasets: [
     {
       data: [80, 20],
-      backgroundColor: ["#FAA002", "#0082FF"],
+      backgroundColor: ["#0082FF", "#FAA002"],
       borderWidth: 0,
     },
   ],
@@ -26,7 +26,7 @@ const Tokenomics = () => {
 
       <div className="py-4 flex flex-col gap-3">
         <div className="text-[20px] font-semibold">Initial Distribution</div>
-        <div className=" max-h-40 flex gap-10">
+        <div className=" max-h-40 flex md:gap-10 gap-5">
           <Doughnut
             data={data}
             options={options}
@@ -35,7 +35,12 @@ const Tokenomics = () => {
           <div className="flex flex-col gap-4 justify-center">
             <div className="flex gap-2">
               <div className="h-3 w-3 bg-[#FAA002]  rounded-full"></div>
-              <div className="text-[#3E424A] text-sm">Crowdsale investors</div>
+              <nobr>
+                <div className="text-[#3E424A] text-sm">
+                  Crowdsale investors
+                </div>
+              </nobr>
+
               <div className="text-[#3E424A] text-sm">80%</div>
             </div>
 

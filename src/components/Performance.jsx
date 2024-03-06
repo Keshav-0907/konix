@@ -1,9 +1,104 @@
-import React from 'react'
+import React from "react";
+import InfoIcon from "../assets/icons/InfoIcon";
 
 const Performance = () => {
   return (
-    <div className='bg-white rounded-xl p-5'>Performance</div>
-  )
-}
+    <div className="bg-white rounded-xl p-5">
+      <div className="text-2xl font-semibold"> Performance </div>
+      <div className="flex flex-col gap-5 my-5">
+        <div className="w-full flex items-center">
+          <div className="w-2/12 text-[#44475B]">
+            <div className="text-sm">{`Today's Low`}</div>
+            <div>46,930.22</div>
+          </div>
 
-export default Performance
+          <div className="w-8/12 bg-gradient-to-r from-rose-500 via-yellow-500 to-emerald-500 h-2 rounded-full"></div>
+
+          <div className="w-2/12 text-end text-[#44475B]">
+            <div className="text-sm">{`Today's High`}</div>
+            <div>49,343.83</div>
+          </div>
+        </div>
+        <div className="w-full flex items-center">
+          <div className="w-2/12 text-[#44475B]">
+            <div className="text-sm">{`52W Low`}</div>
+            <div>46,930.22</div>
+          </div>
+
+          <div className="w-8/12 bg-gradient-to-r from-rose-500 via-yellow-500 to-emerald-500 h-2 rounded-full"></div>
+
+          <div className="w-2/12 text-end text-[#44475B]">
+            <div className="text-sm">{`52W High`}</div>
+            <div>49,343.83</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex items-center">
+        <div className="flex gap-3 font-semibold text-lg">
+          {" "}
+          <span>Fundamentals</span> <InfoIcon />{" "}
+        </div>
+      </div>
+
+      <div className="text-sm flex justify-between md:gap-12 py-8 md:flex-row flex-col">
+        <div className="md:w-1/2 w-full flex flex-col gap-5 ">
+          <div className="flex justify-between border-b pb-3">
+            <div className="text-[#768396]">Bitcoin Price</div>
+            <div>$16,815.46</div>
+          </div>
+          <div className="flex justify-between border-b pb-3">
+            <div className="text-[#768396]">24h Low / 24h High</div>
+            <div>$16,382.07 / $16,874.12</div>
+          </div>
+          <div className="flex justify-between border-b pb-3">
+            <div className="text-[#768396]">7d Low / 7d High</div>
+            <div>$16,382.07 / $16,874.12</div>
+          </div>
+          <div className="flex justify-between border-b pb-3">
+            <div className="text-[#768396]">Trading Volume</div>
+            <div>$23,249,202,782</div>
+          </div>
+          <div className="flex justify-between border-b pb-3">
+            <div className="text-[#768396]">Market Cap Rank</div>
+            <div>#1</div>
+          </div>
+        </div>
+        <div className="md:w-1/2 w-full flex flex-col md:pt-0 pt-5">
+          <div className="flex justify-between border-b pb-3">
+            <div className="text-[#768396]">Market Cap</div>
+            <div>$323,507,290,047</div>
+          </div>
+          <div className="flex justify-between border-b py-4">
+            <div className="text-[#768396]">Market Cap Dominance</div>
+            <div>38.343%</div>
+          </div>
+          <div className="flex justify-between border-b py-4">
+            <div className="text-[#768396]">Volume / Market Cap</div>
+            <div>0.0718</div>
+          </div>
+          <div className="flex justify-between border-b py-2">
+            <div className="text-[#768396] flex items-center">All-Time High</div>
+            <div className="text-end">
+              <div>
+                $69,044.77 <span className="text-red-500"> -75.6% </span>{" "}
+              </div>
+              <div className="text-xs">Nov 10, 2021 (about 1 year)</div>
+            </div>
+          </div>
+          <div className="flex justify-between border-b py-2">
+            <div className="text-[#768396] flex items-center">All-Time Low</div>
+            <div className="text-end">
+              <div>
+                $67.81 <span className="text-green-500"> 24729.1% </span>{" "}
+              </div>
+              <div className="text-xs">Jul 06, 2013 (over 9 years)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Performance;

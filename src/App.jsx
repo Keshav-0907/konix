@@ -9,73 +9,35 @@ import Sentiment from "./components/Sentiment";
 import AboutBitcoin from "./components/AboutBitcoin";
 import Tokenomics from "./components/Tokenomics";
 import Team from "./components/Team";
-
-const SecondryMenu = [
-  {
-    title: "Overview",
-    active: true,
-  },
-  {
-    title: "Fundamentals",
-    active: false,
-  },
-  {
-    title: "News Insights",
-    active: false,
-  },
-  {
-    title: "Sentiments",
-    active: false,
-  },
-  {
-    title: "Team",
-    active: false,
-  },
-  {
-    title: "Technicals",
-    active: false,
-  },
-  {
-    title: "Tokenomics",
-    active: false,
-  },
-];
+import TrendingCoins from "./components/TrendingCoins";
+import SecondryMenu from "./components/SecondryMenu";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <div className="bg-gray-200 px-10 py-20 h-full">
-        <div className="flex items-center text-sm">
+      <div className="bg-gray-200 md:px-10 px-5 py-20 h-full">
+        <div className="flex items-center text-sm pb-4">
           <span className="text-gray-500">Cryptocurrencies </span> <ArrowIcon />{" "}
           <span>Bitcoin</span>
         </div>
 
-        <div className="flex gap-6">
-          <div className="w-4/6 flex flex-col gap-5">
+        <div className="flex md:flex-row flex-col gap-6">
+          <div className="md:w-4/6 w-full flex flex-col gap-5">
             <Hero />
-            <div className="flex gap-10 relative">
-              {SecondryMenu.map((item, index) => (
-                <div
-                  key={index}
-                  className={`text-gray-500 cursor-pointer pb-3 ${
-                    item.active ? "text-blue-700 font-medium" : ""
-                  }`}
-                >
-                  {item.title}
-                </div>
-              ))}
-              <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gray-300" />
-              <div className="absolute bottom-0 left-0 w-[75px] h-[2px] bg-blue-700" />
+            <SecondryMenu />
+
+            <Performance />
+            <Sentiment />
+            <AboutBitcoin />
+            <div className="hidden md:flex">
+              <Tokenomics />
             </div>
-            <Performance/>
-            <Sentiment/>
-            <AboutBitcoin/>
-            <Tokenomics/>
-            <Team/>
+            <Team />
           </div>
-          <div className="w-2/6">
+          <div className="md:w-2/6 w-full flex flex-col gap-4">
             <Sidebar />
+            <TrendingCoins />
           </div>
         </div>
       </div>
