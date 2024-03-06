@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import InfoIcon from "../assets/icons/InfoIcon";
+import Chevron from "../assets/icons/Chevron";
+import { useState } from "react";
 
 const Performance = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetch("https://api.coingecko.com/api/v3/coins/bitcoin")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  console.log(data)
   return (
     <div className="bg-white rounded-xl p-5">
       <div className="text-2xl font-semibold"> Performance </div>
@@ -12,7 +28,12 @@ const Performance = () => {
             <div>46,930.22</div>
           </div>
 
-          <div className="w-8/12 bg-gradient-to-r from-rose-500 via-yellow-500 to-emerald-500 h-2 rounded-full"></div>
+          <div className="w-8/12 relative bg-gradient-to-r from-rose-500 via-yellow-500 to-emerald-500 h-2 rounded-full">
+            <div className="absolute top-2 md:right-32 right-10">
+              {" "}
+              <Chevron /> <span>$48,637.83</span>{" "}
+            </div>
+          </div>
 
           <div className="w-2/12 text-end text-[#44475B]">
             <div className="text-sm">{`Today's High`}</div>
@@ -78,7 +99,9 @@ const Performance = () => {
             <div>0.0718</div>
           </div>
           <div className="flex justify-between border-b py-2">
-            <div className="text-[#768396] flex items-center">All-Time High</div>
+            <div className="text-[#768396] flex items-center">
+              All-Time High
+            </div>
             <div className="text-end">
               <div>
                 $69,044.77 <span className="text-red-500"> -75.6% </span>{" "}

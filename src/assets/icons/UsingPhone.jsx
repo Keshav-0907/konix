@@ -383,8 +383,8 @@ const UsingPhone = () => {
           y2="97.999"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFCE00" />
-          <stop offset="1" stop-color="#FFB003" />
+          <stop stopColor="#FFCE00" />
+          <stop offset="1" stopColor="#FFB003" />
         </linearGradient>
         <linearGradient
           id="e"
@@ -394,9 +394,9 @@ const UsingPhone = () => {
           y2="88.579"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#02CDFF" />
-          <stop offset=".495" stop-color="#03C0FF" />
-          <stop offset="1" stop-color="#005AFD" />
+          <stop stopColor="#02CDFF" />
+          <stop offset=".495" stopColor="#03C0FF" />
+          <stop offset="1" stopColor="#005AFD" />
         </linearGradient>
         <linearGradient
           id="f"
@@ -406,8 +406,8 @@ const UsingPhone = () => {
           y2="108.563"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFCE00" />
-          <stop offset="1" stop-color="#FFB003" />
+          <stop stopColor="#FFCE00" />
+          <stop offset="1" stopColor="#FFB003" />
         </linearGradient>
         <linearGradient
           id="g"
@@ -417,8 +417,8 @@ const UsingPhone = () => {
           y2="52.031"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFAC00" />
-          <stop offset="1" stop-color="#FE7801" />
+          <stop stopColor="#FFAC00" />
+          <stop offset="1" stopColor="#FE7801" />
         </linearGradient>
         <linearGradient
           id="h"
@@ -428,8 +428,8 @@ const UsingPhone = () => {
           y2="51.524"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFCE00" />
-          <stop offset="1" stop-color="#FFB003" />
+          <stop stopColor="#FFCE00" />
+          <stop offset="1" stopColor="#FFB003" />
         </linearGradient>
         <linearGradient
           id="i"
@@ -439,8 +439,8 @@ const UsingPhone = () => {
           y2="52.492"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FE8B01" />
-          <stop offset="1" stop-color="#FE7801" />
+          <stop stopColor="#FE8B01" />
+          <stop offset="1" stopColor="#FE7801" />
         </linearGradient>
         <linearGradient
           id="j"
@@ -450,8 +450,8 @@ const UsingPhone = () => {
           y2="47.59"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#FFCE00" />
-          <stop offset="1" stop-color="#FFC101" />
+          <stop stopColor="#FFCE00" />
+          <stop offset="1" stopColor="#FFC101" />
         </linearGradient>
         <clipPath id="a">
           <path

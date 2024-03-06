@@ -97,7 +97,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="h-full">
+      <div className="h-[50vh]">
         <div
           className="tradingview-widget-container"
           ref={container}
