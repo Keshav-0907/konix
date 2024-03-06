@@ -25,19 +25,19 @@ const Performance = () => {
         <div className="w-full flex items-center">
           <div className="w-2/12 text-[#44475B]">
             <div className="text-sm">{`Today's Low`}</div>
-            <div>46,930.22</div>
+            <div>${new Intl.NumberFormat().format(data.market_data.low_24h.usd)}</div>
           </div>
 
           <div className="w-8/12 relative bg-gradient-to-r from-rose-500 via-yellow-500 to-emerald-500 h-2 rounded-full">
             <div className="absolute top-2 md:right-32 right-10">
               {" "}
-              <Chevron /> <span>$48,637.83</span>{" "}
+              <Chevron /> <span>${new Intl.NumberFormat().format(data.market_data.current_price.usd)}</span>{" "}
             </div>
           </div>
 
           <div className="w-2/12 text-end text-[#44475B]">
             <div className="text-sm">{`Today's High`}</div>
-            <div>49,343.83</div>
+            <div>${new Intl.NumberFormat().format(data.market_data.high_24h.usd)}</div>
           </div>
         </div>
         <div className="w-full flex items-center">
@@ -66,11 +66,11 @@ const Performance = () => {
         <div className="md:w-1/2 w-full flex flex-col gap-5 ">
           <div className="flex justify-between border-b pb-3">
             <div className="text-[#768396]">Bitcoin Price</div>
-            <div>$16,815.46</div>
+            <div>${new Intl.NumberFormat().format(data.market_data.current_price.usd)}</div>
           </div>
           <div className="flex justify-between border-b pb-3">
             <div className="text-[#768396]">24h Low / 24h High</div>
-            <div>$16,382.07 / $16,874.12</div>
+            <div>${new Intl.NumberFormat().format(data.market_data.low_24h.usd)} / ${new Intl.NumberFormat().format(data.market_data.high_24h.usd)}</div>
           </div>
           <div className="flex justify-between border-b pb-3">
             <div className="text-[#768396]">7d Low / 7d High</div>
@@ -78,17 +78,17 @@ const Performance = () => {
           </div>
           <div className="flex justify-between border-b pb-3">
             <div className="text-[#768396]">Trading Volume</div>
-            <div>$23,249,202,782</div>
+            <div>${new Intl.NumberFormat().format(data.market_data.total_volume.usd)} </div>
           </div>
           <div className="flex justify-between border-b pb-3">
             <div className="text-[#768396]">Market Cap Rank</div>
-            <div>#1</div>
+            <div>#{new Intl.NumberFormat().format(data.market_data.market_cap_rank)}</div>
           </div>
         </div>
         <div className="md:w-1/2 w-full flex flex-col md:pt-0 pt-5">
           <div className="flex justify-between border-b pb-3">
             <div className="text-[#768396]">Market Cap</div>
-            <div>$323,507,290,047</div>
+            <div>${new Intl.NumberFormat().format(data.market_data.market_cap.usd)}</div>
           </div>
           <div className="flex justify-between border-b py-4">
             <div className="text-[#768396]">Market Cap Dominance</div>
